@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { createPortal } from 'react-dom'
 
 type Props = {
   open: boolean
@@ -34,7 +35,9 @@ export function ConfirmModal({
 
   if (!open) return null
 
-  return (
+  if (typeof document === 'undefined') return null
+
+  return createPortal(
     <div className="fixed inset-0 z-50">
       <button
         aria-label="close"
@@ -42,7 +45,7 @@ export function ConfirmModal({
         onClick={onCancel}
       />
 
-      <div className="absolute left-[6vw] top-[12vh] w-[min(520px,88vw)]">
+      <div className="absolute left-1/2 top-[12vh] w-[min(560px,92vw)] -translate-x-[52%]">
         <div className="rotate-[-0.5deg] border border-[color:rgba(42,42,36,0.7)] bg-[color:var(--paper-0)] text-[color:var(--ink-0)] shadow-paper">
           <div className="px-5 pt-5">
             <div className="text-[22px] font-[750] tracking-[-0.02em]">{title}</div>
@@ -71,6 +74,7 @@ export function ConfirmModal({
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }
