@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-0: #11110f;
+  --bg-1: #141311;
+  --paper-0: #f2e9dc;
+  --paper-1: #e6ddcf;
+  --ink-0: #11110f;
+  --ink-1: rgba(17, 17, 15, 0.78);
+  --line-0: #2a2a24;
+  --rust-0: #b24a3a;
+  --acid-0: #b8ff4d;
+
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.45;
+  font-weight: 400;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--paper-0);
+  background-color: var(--bg-0);
+  background-image: radial-gradient(1200px 700px at 18% -10%, rgba(178, 74, 58, 0.25), transparent 60%),
+    radial-gradient(900px 520px at 85% 15%, rgba(184, 255, 77, 0.12), transparent 55%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 35%),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.02) 0px, rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 6px);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
